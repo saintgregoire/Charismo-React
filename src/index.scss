@@ -3,3 +3,60 @@
 @import './styles/fonts';
 @import 'reset-css/sass/reset';
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body{
+  scroll-behavior: smooth;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+  font-size: 1.4rem;
+  color: vars.$txt-color;
+  background: vars.$white;
+  @include vars.viewport-md{
+    font-size: 1.6rem;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 3rem;
+
+  @include vars.viewport-md{
+    max-width: 768px;
+  }
+
+  @include vars.viewport-lg{
+    padding: 0 4rem;
+    max-width: 1024px;
+  }
+
+  @include vars.viewport-xl{
+    max-width: 1440px;
+  }
+
+  @include vars.viewport-xxl {
+    max-width: 1920px;
+    padding: 0 16rem;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.sr-only {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}

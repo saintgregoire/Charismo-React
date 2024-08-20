@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('./assets/fonts/IBMPlexSans-SemiBold.woff2') format('woff2'),
+  url('./assets/fonts/IBMPlexSans-SemiBold.woff') format('woff'),
+  url('./assets/fonts/IBMPlexSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('./assets/fonts/IBMPlexSans-Regular.woff2') format('woff2'),
+  url('./assets/fonts/IBMPlexSans-Regular.woff') format('woff'),
+  url('./assets/fonts/IBMPlexSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-SemiBold.woff2') format('woff2'),
+  url('./assets/fonts/Montserrat-SemiBold.woff') format('woff'),
+  url('./assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-Regular.woff2') format('woff2'),
+  url('./assets/fonts/Montserrat-Regular.woff') format('woff'),
+  url('./assets/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

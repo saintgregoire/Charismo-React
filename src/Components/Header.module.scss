@@ -1,1 +1,126 @@
 @use '../styles/vars' as vars;
+
+.header{
+  background: vars.$second-bg;
+  padding: 2rem 0;
+
+  &__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo{
+    width: 120px;
+
+    & > img{
+      width: 100%;
+      object-fit: cover;
+      height: auto;
+    }
+  }
+
+  &__burger_menu{
+    font-size: 2.5rem;
+    color: vars.$primary-color;
+  }
+
+  &__nav{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: vars.$white;
+    padding: 3rem;
+    transform: translateY(-200%);
+    transition: all .3s ease-in-out;
+    box-shadow: 1px 45px 16px -40px rgba(0,0,0,0.63);
+    -webkit-box-shadow: 1px 45px 16px -40px rgba(0,0,0,0.63);
+    -moz-box-shadow: 1px 45px 16px -40px rgba(0,0,0,0.63);
+  }
+
+  &__close{
+    color: vars.$white;
+    background-color: vars.$primary-color;
+    font-size: 2rem;
+    width: 20px;
+    height: 20px;
+    @include vars.flex;
+    overflow: hidden;
+    border-radius: vars.$border-round;
+    margin-bottom: 2.5rem;
+  }
+
+  &__list{
+
+    & > li{
+      padding: 1rem 0;
+      position: relative;
+    }
+
+    & > li:not(:last-child):not(:nth-last-child(2)):after{
+      content: '';
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      border-top: 2px solid vars.$title-color;
+      border-right: 2px solid vars.$title-color;
+      transform: rotate(45deg) translateY(-50%);
+    }
+
+    
+
+    & a{
+      color: vars.$title-color;
+      text-decoration: none;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__cart{
+    border-top: 1px solid vars.$grey;
+    border-bottom: 1px solid vars.$grey;
+  }
+
+  &__call{
+    border-bottom: 1px solid vars.$grey; 
+  }
+
+  &__cart > button, &__call > button{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      color: vars.$title-color;
+      font-family: 'IBM Plex Sans', sans-serif;
+  }
+
+  &__social{
+    padding: 1rem 0;
+
+    & > a{
+      color: vars.$title-color;
+      font-size: 2rem;
+      margin-right: 1rem;
+
+      & > svg{
+        vertical-align: middle;
+      }
+    }
+  }
+
+}
+
+.show{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
