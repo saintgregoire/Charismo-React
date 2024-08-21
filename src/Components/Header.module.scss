@@ -8,10 +8,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include vars.viewport-lg{
+      flex-direction: column;
+    }
+    @include vars.viewport-xl{
+      flex-direction: row;
+    }
   }
 
   &__logo{
     width: 120px;
+    @include vars.flex;
+    @include vars.viewport-xl{
+      margin-right: 12rem;
+      width: 150px;
+    }
 
     & > img{
       width: 100%;
@@ -23,6 +34,10 @@
   &__burger_menu{
     font-size: 2.5rem;
     color: vars.$primary-color;
+
+    @include vars.viewport-lg{
+      display: none;
+    }
   }
 
   &__nav{
@@ -39,6 +54,18 @@
     box-shadow: 1px 45px 16px -40px rgba(0,0,0,0.63);
     -webkit-box-shadow: 1px 45px 16px -40px rgba(0,0,0,0.63);
     -moz-box-shadow: 1px 45px 16px -40px rgba(0,0,0,0.63);
+
+    @include vars.viewport-lg{
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      position: static;
+      padding:0;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      background: transparent;
+    }
   }
 
   &__close{
@@ -51,13 +78,28 @@
     overflow: hidden;
     border-radius: vars.$border-round;
     margin-bottom: 2.5rem;
+
+    @include vars.viewport-lg{
+      display: none;
+    }
   }
 
   &__list{
+    @include vars.viewport-lg{
+      display: grid;
+      grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 1fr 2fr;
+      text-align: center;
+    }
 
     & > li{
       padding: 1rem 0;
       position: relative;
+      text-wrap: nowrap;
+      @include vars.viewport-xl{
+        padding: 0;
+        @include vars.flex;
+        }
+      }
     }
 
     & > li:not(:last-child):not(:nth-last-child(2)):after{
@@ -70,24 +112,22 @@
       border-top: 2px solid vars.$title-color;
       border-right: 2px solid vars.$title-color;
       transform: rotate(45deg) translateY(-50%);
-    }
 
-    
+      @include vars.viewport-lg{
+        display: none;
+      }
+    }
 
     & a{
       color: vars.$title-color;
       text-decoration: none;
       font-size: 1.6rem;
+      @include vars.viewport-lg{
+        &:hover{
+          color: vars.$primary-color;
+          font-weight: 600;
+        }
     }
-  }
-
-  &__cart{
-    border-top: 1px solid vars.$grey;
-    border-bottom: 1px solid vars.$grey;
-  }
-
-  &__call{
-    border-bottom: 1px solid vars.$grey; 
   }
 
   &__cart > button, &__call > button{
@@ -101,10 +141,67 @@
       font-size: 1.6rem;
       color: vars.$title-color;
       font-family: 'IBM Plex Sans', sans-serif;
+      cursor: pointer;
+
+      & > span{
+        @include vars.viewport-lg{
+          display: none;
+        }
+      }
+  }
+
+  &__cart{
+    border-top: 1px solid vars.$grey;
+    border-bottom: 1px solid vars.$grey;
+
+    @include vars.viewport-lg{
+      border: none;
+      grid-column: 7/8;
+      justify-self: center;
+      align-self: center;
+      margin-right: 2rem;
+    }
+
+    & > button{
+      @include vars.viewport-lg{
+        background: rgb(35, 137, 255, .1);
+        padding: 1rem;
+        border-radius: vars.$border-radius-md;
+  
+        &:hover{
+          background: rgb(35, 137, 255, .3);
+        }
+      }
+    }
+  }
+
+  &__call{
+    border-bottom: 1px solid vars.$grey;
+    @include vars.viewport-lg{
+      border: none;
+      grid-column: 8/9;
+    } 
+
+      & > button{
+        @include vars.viewport-lg{
+          border: 1px solid vars.$primary-color;
+        border-radius: vars.$border-radius-md;
+        padding: 1rem 2rem;
+        text-wrap: nowrap;
+        &:hover{
+          background: rgb(35, 137, 255, .1);
+        }
+        }
+        
+      }
+    
   }
 
   &__social{
     padding: 1rem 0;
+    @include vars.viewport-lg{
+      display: none;
+    }
 
     & > a{
       color: vars.$title-color;

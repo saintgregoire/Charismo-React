@@ -62,10 +62,10 @@ function Header() {
                 <Link to='/reviews'>Отзывы</Link>
               </li>
               <li className={`${style.header__cart}`}>
-                <button type={"button"}>Корзина <FaCartShopping/></button>
+                <button type={"button"}><span>Корзина</span> <FaCartShopping/></button>
               </li>
               <li className={`${style.header__call}`}>
-                <button type={"button"}>Перезвоните мне <IoCall /></button>
+                <button type={"button"}>Перезвоните мне <span><IoCall /></span></button>
               </li>
             </ul>
             <div className={`${style.header__social}`}>
