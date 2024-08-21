@@ -16,13 +16,21 @@ body{
   scroll-behavior: smooth;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: 1.2;
   font-size: 1.4rem;
   color: vars.$txt-color;
   background: vars.$white;
   @include vars.viewport-md{
     font-size: 1.6rem;
   }
+}
+
+h1, h2{
+  @include vars.title-text(3rem);
+}
+
+h3{
+  @include vars.title-text(1.6rem);
 }
 
 .container {
