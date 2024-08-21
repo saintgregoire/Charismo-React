@@ -1,1 +1,78 @@
 @use '../styles/vars' as vars;
+
+.solutions{
+  margin-top: 5rem !important;
+
+  & > h2{
+    margin-bottom: 2rem;
+  }
+
+  & > p{
+    margin-bottom: 2rem;
+  }
+
+  &__box{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include vars.viewport-md{
+      flex-direction: row;
+      gap: 2rem
+    }
+
+    @include vars.viewport-xl{
+      gap: 10rem;
+    }
+  }
+
+  & article{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 3px -220px 63px 4px rgb(244, 247, 254) inset;
+    -webkit-box-shadow: 3px -220px 63px 4px rgb(244, 247, 254) inset;
+    -moz-box-shadow: 3px -220px 63px 4px rgb(244, 247, 254)inset;
+    border-radius: vars.$border-radius-md;
+    overflow: hidden;
+    @include vars.viewport-md{
+      flex: 1 1 33.3%;
+      justify-content: space-between;
+    }
+
+    & > h3{
+      padding: 0 1.5rem;
+    }
+
+    & > p{
+      padding: 0 1.5rem;
+    }
+
+    & > a{
+      margin: .5rem 0 1.5rem 0;
+      padding: 0 1.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: vars.$primary-color;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      transition: all .3s ease-in-out;
+
+      &:hover{
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  &__img{
+    width: 100%;
+    background: vars.$second-bg;
+    position: relative;
+    z-index: -1;
+    & > img{
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
