@@ -3,6 +3,9 @@
 .header{
   background: vars.$second-bg;
   padding: 2rem 0;
+  @include vars.viewport-lg{
+    border-bottom: 2px solid vars.$grey;
+  }
 
   &__container{
     display: flex;
