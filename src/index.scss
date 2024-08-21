@@ -26,7 +26,10 @@ body{
 }
 
 h1, h2{
-  @include vars.title-text(3rem);
+  @include vars.title-text(2.8rem);
+  @include vars.viewport-md{
+    font-size: 3rem;
+  }
 }
 
 h3{
