@@ -71,3 +71,20 @@ h3{
   height:1px;
   overflow:hidden;
 }
+
+// ??????????????????????/
+.swiper-wrapper{
+  margin-bottom: 35px;
+}
+
+.swiper-pagination-bullet{
+  @include vars.viewport-md{
+    width: 30px;
+    height: 5px;
+    border-radius: vars.$border-radius-md;
+  }
+}
+
+.swiper-pagination-bullet-active{
+  background: vars.$primary-color;
+}
