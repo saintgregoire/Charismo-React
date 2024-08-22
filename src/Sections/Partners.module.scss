@@ -1,1 +1,22 @@
 @use '../styles/vars' as vars;
+
+.partners{
+  margin-top: 5rem !important;
+
+  & > p{
+    margin: 1rem 0 2rem;
+  }
+
+  &__slide{
+    align-self: center;
+  }
+
+  &__image{
+    width: 100%;
+
+    & > img{
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
