@@ -15,7 +15,7 @@ import { FaXTwitter } from "react-icons/fa6"
 function Footer() {
   return (
     <footer className={`${style.footer}`}>
-      <div className={`${style.footer__container}`}>
+      <section className={`${style.footer__container}`}>
       <Link to='/' className={`${style.footer__logo}`}>
         <img src={logo} alt="logo" />
       </Link>
@@ -39,7 +39,60 @@ function Footer() {
         </a>
       </div>
       <p className={`${style.footer__copy}`}>Copyright &copy; 2024 VOZNICHKA Maksym</p>
-      </div>
+      </section>
+
+      <section className={`${style.footer__list}`}>
+        <h2>Страницы</h2>
+        <nav>
+          <ul>
+            <li>
+              <Link to='/'>Главная</Link>
+            </li>
+            <li>
+              <Link to='/shop'>Магазин</Link>
+            </li>
+            <li>
+              <Link to='/blog'>Блог</Link>
+            </li>
+            <li>
+              <Link to='/faq'>Вопросы и ответы</Link>
+            </li>
+            <li>
+              <Link to='/reviews'>Отзывы</Link>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <section className={`${style.footer__list}`}>
+        <h2>Продукты</h2>
+        <nav>
+          <ul>
+            <li>
+              <Link to=''>Dekobrow</Link>
+            </li>
+            <li>
+              <Link to=''>DekoHair</Link>
+            </li>
+            <li>
+              <Link to=''>DekoPill</Link>
+            </li>
+            <li>
+              <Link to=''>DekoBeard</Link>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <section className={`${style.footer__form}`}>
+        <h2>Будьте в курсе всех новостей</h2>
+        <form action="">
+          <label htmlFor="email"></label>
+          <input type="email" id='email' placeholder='Ваш E-mail' required/>
+          <button type='submit'>Подписаться</button>
+        </form>
+      </section>
+      
     </footer>
   )
 }

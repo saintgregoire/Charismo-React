@@ -2,11 +2,32 @@
 
 .footer{
   padding: 10rem 3rem 3rem;
+  @include vars.viewport-lg{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    gap: 2rem;
+  }
+
+  & h2{
+    font-size: 1.6rem;
+    @include vars.viewport-xl{
+      font-size: 2rem;
+    }
+  }
 
   &__logo{
     width: 50%;
     display: block;
     margin-bottom: 2rem;
+    @include vars.viewport-md{
+      width: 30%;
+    }
+    @include vars.viewport-lg{
+      width: 50%;
+    }
+    @include vars.viewport-xxl{
+      width: 40%;
+    }
 
     & > img{
       width: 100%;
@@ -19,7 +40,6 @@
   }
 
   &__h2{
-    font-size: 1.6rem;
     margin-bottom: 2rem;
   }
 
@@ -41,6 +61,65 @@
 
     &:hover{
       background-color: vars.$primary-color;
+    }
+  }
+
+  &__list{
+    display: none;
+    @include vars.viewport-lg{
+      display: block;
+      justify-self: center;
+    }
+
+    & > h2{
+      margin-bottom: 1rem;
+    }
+
+    & ul{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    & a{
+      text-decoration: none;
+      color: vars.$txt-color;
+      &:hover{
+        color: vars.$primary-color;
+      }
+    }
+  }
+
+  &__form{
+    width: 85%;
+    justify-self: center;
+    & > h2{
+      margin-bottom: 1rem;
+    }
+
+    & > form{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    & input{
+      border: 1px solid vars.$grey;
+      padding: 1rem;
+      border-radius: vars.$border-radius-sm;
+      &::placeholder{
+        color: vars.$grey;
+      }
+    }
+
+    & button{
+      border: none;
+      background: vars.$primary-color;
+      color: vars.$white;
+      font-weight: 600;
+      border-radius: vars.$border-radius-sm;
+      padding: 1rem;
+      cursor: pointer;
     }
   }
 }
