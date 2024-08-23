@@ -82,12 +82,17 @@
     padding: 1em 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    transition: transform .3s ease-in-out;
     @include vars.viewport-md{
       margin: 0;
     }
     @include vars.viewport-lg{
       width: 270px;
       height: 55px;
+    }
+
+    &:hover{
+      transform: scale(1.2);
     }
   }
 }
