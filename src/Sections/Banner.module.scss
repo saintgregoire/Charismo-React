@@ -1,1 +1,93 @@
 @use '../styles/vars' as vars;
+
+.banner{
+  background-image: url('../assets/images/noroot\ 3.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  box-shadow: 0 -165px 24px 2px rgba(255,255,255,0.9) inset;
+-webkit-box-shadow: 0 -165px 24px 2px rgba(255,255,255,0.9) inset;
+-moz-box-shadow: 0 -165px 24px 2px rgba(255,255,255,0.9) inset;
+@include vars.viewport-md{
+  background-image: url('../assets/images/noroot\ 3.png'), url('../assets/images/noroot\ 2.png');
+  background-position: left -115px bottom, right -150px bottom;
+  background-size: 70%;
+  box-shadow: none;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+}
+@include vars.viewport-lg{
+  background-size: 40%;
+}
+
+  &__container{
+    @include vars.viewport-lg{
+      display: grid;
+      grid-template-columns: repeat(2,2fr);
+    }
+  }
+
+  &__title{
+    margin-top: 1em;
+    @include vars.viewport-lg{
+      height: 80px;
+      align-self: end;
+    }
+    @include vars.viewport-xl{
+      height: 30px;
+    }
+  }
+
+  & p{
+    margin-top: 1em;
+    @include vars.viewport-lg{
+      margin-top: 0;
+      height: 50px;
+      align-self: center;
+    }
+    @include vars.viewport-xl{
+      height: 50px;
+    }
+  }
+
+
+  &__img{
+    margin-top: 2rem;
+    z-index: -1;
+    position: relative;
+    @include vars.viewport-md{
+      z-index: 1;
+    }
+    @include vars.viewport-lg{
+      grid-column: 2/3;
+      grid-row: 1/4;
+    }
+    & > img{
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  & a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 2rem;
+    width: 100%;
+    background-color: vars.$primary-color;
+    border: none;
+    color: vars.$white;
+    border-radius: vars.$border-radius-sm;
+    padding: 1em 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    @include vars.viewport-md{
+      margin: 0;
+    }
+    @include vars.viewport-lg{
+      width: 270px;
+      height: 55px;
+    }
+  }
+}

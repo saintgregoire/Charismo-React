@@ -167,12 +167,12 @@
 
     & > button{
       @include vars.viewport-lg{
-        background: rgb(35, 137, 255, .1);
+        background: vars.$primary-transparent;
         padding: 1rem;
         border-radius: vars.$border-radius-md;
   
         &:hover{
-          background: rgb(35, 137, 255, .3);
+          background: vars.$primary-transparent;
         }
       }
     }
@@ -192,7 +192,7 @@
         padding: 1rem 2rem;
         text-wrap: nowrap;
         &:hover{
-          background: rgb(35, 137, 255, .1);
+          background: vars.$primary-transparent;
         }
         }
         

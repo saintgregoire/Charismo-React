@@ -1,1 +1,28 @@
 @use '../styles/vars' as vars;
+
+.solutions{
+  margin-top: 5rem !important;
+
+  & > h2{
+    margin-bottom: 2rem;
+  }
+
+  & > p{
+    margin-bottom: 2rem;
+  }
+
+  &__box{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include vars.viewport-md{
+      flex-direction: row;
+      gap: 2rem
+    }
+
+    @include vars.viewport-xl{
+      gap: 10rem;
+    }
+  }
+}

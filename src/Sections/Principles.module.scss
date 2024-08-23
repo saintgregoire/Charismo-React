@@ -1,1 +1,26 @@
 @use '../styles/vars' as vars;
+
+.princ{
+  margin-top: 7rem !important;
+
+  & > h2{
+    margin-bottom: 2rem;
+  }
+
+  &__par{
+    margin-bottom: 3rem;
+    @include vars.viewport-xl{
+      margin-bottom: 4.5rem;
+      width: 55%;
+    }
+  }
+
+  &__box{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    @include vars.viewport-md{
+      flex-direction: row;
+    }
+  }
+}

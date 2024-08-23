@@ -1,1 +1,49 @@
 @use '../styles/vars' as vars;
+
+.prof{
+  background:url('../assets/images/noroot\ 3.png'), linear-gradient(92.31deg, #2389FF 0.74%, rgba(35, 137, 255, 0.5) 98.19%);
+  padding: 5rem 0;
+  text-align: center;
+  color: vars.$white;
+  @include vars.viewport-md{
+    padding: 10rem 0;
+  }
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    @include vars.viewport-md{
+      gap: 3rem;
+    }
+  }
+
+  & h2{
+    color: vars.$white;
+  }
+
+  & button{
+    background: vars.$white;
+    padding: 1em 0;
+    border: none;
+    border-radius: vars.$border-radius-md;
+    color: vars.$primary-color;
+    font-weight: 600;
+    width: 80%;
+    cursor: pointer;
+    transition: transform .3s ease-in-out;
+    &:hover{
+      transform: scale(1.2);
+    }
+    @include vars.viewport-md{
+      width: 40%;
+    }
+    @include vars.viewport-lg{
+      width: 25%;
+    }
+    @include vars.viewport-xxl{
+      width: 15%;
+    }
+  }
+}

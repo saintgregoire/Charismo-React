@@ -16,13 +16,24 @@ body{
   scroll-behavior: smooth;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: 1.2;
   font-size: 1.4rem;
   color: vars.$txt-color;
   background: vars.$white;
   @include vars.viewport-md{
     font-size: 1.6rem;
   }
+}
+
+h1, h2{
+  @include vars.title-text(2.8rem);
+  @include vars.viewport-md{
+    font-size: 3rem;
+  }
+}
+
+h3{
+  @include vars.title-text(1.6rem);
 }
 
 .container {
@@ -59,4 +70,21 @@ body{
   width:1px;
   height:1px;
   overflow:hidden;
+}
+
+// ??????????????????????/
+.swiper-wrapper{
+  margin-bottom: 35px;
+}
+
+.swiper-pagination-bullet{
+  @include vars.viewport-md{
+    width: 30px;
+    height: 5px;
+    border-radius: vars.$border-radius-md;
+  }
+}
+
+.swiper-pagination-bullet-active{
+  background: vars.$primary-color;
 }
