@@ -31,9 +31,9 @@ function Header() {
   return (
       <header className= {style.header}>
         <div className={`${style.header__container} container`}>
-          <div className={style.header__logo}>
+          <Link to='/' className={style.header__logo}>
             <img src={logo} alt="logo"/>
-          </div>
+          </Link>
 
           <div onClick={openBurger} className={style.header__burger_menu}>
             <RxHamburgerMenu />
