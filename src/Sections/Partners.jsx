@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -21,19 +21,34 @@ import vhi from '../assets/images/Vhi Healthcare logo - Brandlogos.net.svg'
 
 function Partners() {
 
-  let slides = 3;
-  let space = 50;
+  const [slides, setSlides] = useState(3);
+  const [space, setSpace] = useState(50);
 
-  if(window.innerWidth > 767){
-    slides = 4;
+  const updateSwiperValues = () => {
+    if(window.innerWidth > 1919){
+      setSlides(6);
+    }
+    else if(window.innerWidth > 1439){
+      setSlides(5);
+      setSpace(80);
+    }
+    else if(window.innerWidth > 767){
+      setSlides(4);
+    }
+    else{
+      setSlides(3);
+      setSpace(50);
+    }
   }
-  if(window.innerWidth > 1439){
-    slides = 5;
-    space = 80;
-  }
-  if(window.innerWidth > 1919){
-    slides = 6;
-  }
+
+  useEffect(() => {
+
+    updateSwiperValues();
+    window.addEventListener('resize', updateSwiperValues);
+    return () => {
+      window.removeEventListener('resize', updateSwiperValues);
+    };
+  }, [])
 
 
   return (
