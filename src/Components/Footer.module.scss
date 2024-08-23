@@ -1,1 +1,46 @@
 @use '../styles/vars' as vars;
+
+.footer{
+  padding: 10rem 3rem 3rem;
+
+  &__logo{
+    width: 50%;
+    display: block;
+    margin-bottom: 2rem;
+
+    & > img{
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text{
+    margin-bottom: 3rem;
+  }
+
+  &__h2{
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  &__social{
+    margin-bottom: 5rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__ico{
+    width: 40px;
+    height: 40px;
+    border-radius: vars.$border-round;
+    text-decoration: none;
+    color: vars.$white;
+    background: vars.$grey;
+    @include vars.flex;
+    transition: background-color .3s ease-in-out;
+
+    &:hover{
+      background-color: vars.$primary-color;
+    }
+  }
+}
