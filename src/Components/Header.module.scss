@@ -172,7 +172,7 @@
         border-radius: vars.$border-radius-md;
   
         &:hover{
-          background: vars.$primary-transparent;
+          background: rgb(35, 137, 255, .3);
         }
       }
     }
