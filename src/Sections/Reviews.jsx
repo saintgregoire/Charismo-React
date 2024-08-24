@@ -15,16 +15,17 @@ function Reviews() {
   const [slides, setSlides] = useState(1);
 
   const updateSlides = () => {
-    if (window.innerWidth > 1919) {
-      setSlides(4);
-    } else if (window.innerWidth > 1439) {
-      setSlides(3);
-    } else if (window.innerWidth > 767) {
-      setSlides(2);
-    } else {
-      setSlides(1);
+    switch(true){
+      case( window.innerWidth > 1919):
+        return setSlides(4);
+      case( window.innerWidth > 1439):
+        return setSlides(3);
+      case( window.innerWidth > 767):
+        return setSlides(2);
+      default:
+        return setSlides(1);
     }
-  };
+  }
 
   useEffect(() => {
     fetch('/data/reviews.json')
@@ -53,7 +54,7 @@ function Reviews() {
       <div className= 'container'>
         <h2>Честные отзывы</h2>
         <p className={`${style.reviews__par}`}>клиентов, партнёров и профессионалов</p>
-        <Swiper
+        <Swiper id='swiper_reviews'
           modules={[Pagination]}
           spaceBetween={50}
           slidesPerView={slides}

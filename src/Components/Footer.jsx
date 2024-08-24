@@ -13,6 +13,7 @@ import { FaXTwitter } from "react-icons/fa6"
 
 
 function Footer() {
+
   return (
     <footer className={`${style.footer}`}>
       <section className={`${style.footer__container}`}>

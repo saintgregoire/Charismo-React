@@ -1,5 +1,6 @@
-import React, { useRef } from 'react'
-import {Link} from 'react-router-dom'
+import React, { useRef, useState, useContext } from 'react'
+import { ModalContext } from './ModalContext.jsx'
+import {NavLink} from 'react-router-dom'
 
 import style from './Header.module.scss'
 
@@ -18,7 +19,9 @@ import { FaXTwitter } from "react-icons/fa6"
 
 function Header() {
 
+  const {setValue} = useContext(ModalContext);
   const navMenu = useRef(null);
+  const [popUp, setPopUp] = useState(false);
 
   const openBurger = () => {
     navMenu.current.classList.add(style.show);
@@ -28,12 +31,17 @@ function Header() {
     navMenu.current.classList.remove(style.show);
   }
 
+  const popUpShow = () => {
+      setPopUp(!popUp)
+      setValue(popUp);
+    };
+
   return (
       <header className= {style.header}>
         <div className={`${style.header__container} container`}>
-          <Link to='/' className={style.header__logo}>
+          <NavLink to='/' className={style.header__logo}>
             <img src={logo} alt="logo"/>
-          </Link>
+          </NavLink>
 
           <div onClick={openBurger} className={style.header__burger_menu}>
             <RxHamburgerMenu />
@@ -47,25 +55,25 @@ function Header() {
 
             <ul className={`${style.header__list}`}>
               <li>
-                <Link to='/'>Главная</Link>
+                <NavLink to='/'>Главная</NavLink>
               </li>
               <li>
-                <Link to='/shop'>Магазин</Link>
+                <NavLink to='/shop'>Магазин</NavLink>
               </li>
               <li>
-                <Link to='/blog'>Блог</Link>
+                <NavLink to='/blog'>Блог</NavLink>
               </li>
               <li>
-                <Link to='/faq'>Вопросы и ответы</Link>
+                <NavLink to='/faq'>Вопросы и ответы</NavLink>
               </li>
               <li>
-                <Link to='/reviews'>Отзывы</Link>
+                <NavLink to='/reviews'>Отзывы</NavLink>
               </li>
               <li className={`${style.header__cart}`}>
                 <button type={"button"}><span>Корзина</span> <FaCartShopping/></button>
               </li>
               <li className={`${style.header__call}`}>
-                <button type={"button"}>Перезвоните мне <span><IoCall /></span></button>
+                <button type={"button"} onClick={popUpShow}>Перезвоните мне <span><IoCall /></span></button>
               </li>
             </ul>
             <div className={`${style.header__social}`}>
@@ -76,8 +84,8 @@ function Header() {
               <a href="https://www.instagram.com/" target='_blank'><FaInstagram /></a>
             </div>
           </nav>
-
         </div>
+
       </header>
   )
 }
