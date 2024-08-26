@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import {Link} from 'react-router-dom'
 
 import style from './Footer.module.scss'
@@ -44,45 +44,41 @@ function Footer() {
 
       <section className={`${style.footer__list}`}>
         <h2>Страницы</h2>
-        <nav>
-          <ul>
-            <li>
-              <Link to='/'>Главная</Link>
-            </li>
-            <li>
-              <Link to='/shop'>Магазин</Link>
-            </li>
-            <li>
-              <Link to='/blog'>Блог</Link>
-            </li>
-            <li>
-              <Link to='/faq'>Вопросы и ответы</Link>
-            </li>
-            <li>
-              <Link to='/reviews'>Отзывы</Link>
-            </li>
-          </ul>
-        </nav>
+        <ul>
+          <li>
+            <Link to='/'>Главная</Link>
+          </li>
+          <li>
+            <Link to='/shop'>Магазин</Link>
+          </li>
+          <li>
+            <Link to='/blog'>Блог</Link>
+          </li>
+          <li>
+            <Link to='/faq'>Вопросы и ответы</Link>
+          </li>
+          <li>
+            <Link to='/reviews'>Отзывы</Link>
+          </li>
+        </ul>
       </section>
 
       <section className={`${style.footer__list}`}>
         <h2>Продукты</h2>
-        <nav>
-          <ul>
-            <li>
-              <Link to=''>Dekobrow</Link>
-            </li>
-            <li>
-              <Link to=''>DekoHair</Link>
-            </li>
-            <li>
-              <Link to=''>DekoPill</Link>
-            </li>
-            <li>
-              <Link to=''>DekoBeard</Link>
-            </li>
-          </ul>
-        </nav>
+        <ul>
+          <li>
+            <Link to=''>Dekobrow</Link>
+          </li>
+          <li>
+            <Link to=''>DekoHair</Link>
+          </li>
+          <li>
+            <Link to=''>DekoPill</Link>
+          </li>
+          <li>
+            <Link to=''>DekoBeard</Link>
+          </li>
+        </ul>
       </section>
 
       <section className={`${style.footer__form}`}>

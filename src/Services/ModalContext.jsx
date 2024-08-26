@@ -1,6 +1,6 @@
 import React, { useState, createContext } from 'react';
 
-export const ModalContext = createContext({popUp});
+export const ModalContext = createContext()
 
 export const MyProvider = ({ children }) => {
     const [value, setValue] = useState(false);

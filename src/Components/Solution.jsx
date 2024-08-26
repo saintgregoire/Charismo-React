@@ -12,7 +12,9 @@ function Solution({img, alt, title, text}) {
       </div>
         <h3>{title}</h3>
         <p>{text}</p>
-        <Link to="/shop">Посмотреть товары <FaArrowRight /></Link>
+        <div className={`${style.solutions__link_container}`}>
+          <Link to="/shop" className={`${style.solutions__link}`}>Посмотреть товары <FaArrowRight /></Link>
+        </div>
     </article>
   )
 }
