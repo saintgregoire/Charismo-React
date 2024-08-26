@@ -1,1 +1,86 @@
 @use '../styles/vars' as vars;
+
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: vars.$primary-transparent;
+  z-index: 9999;
+  @include vars.flex;
+
+  &__window{
+    background: vars.$white;
+    padding: 3rem;
+    width: 80%;
+    border-radius: vars.$border-radius-md;
+    @include vars.viewport-lg{
+      width: 50%;
+    }
+    @include vars.viewport-xxl{
+      width: 40%;
+    }
+  }
+
+  &__welcome{
+    display: inline-block;
+    color: vars.$white;
+    background: vars.$primary-color;
+    padding: .3em 1em;
+    border-radius: vars.$border-radius-md;
+    margin-bottom: 1.5rem;
+  }
+
+  h2{
+    margin-bottom: 1.5rem;
+  }
+
+  &__par{
+    display: none;
+    @include vars.viewport-md{
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+
+  & label{
+    display: none;
+  }
+
+  & input, textarea {
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid vars.$grey;
+    border-radius: vars.$border-radius-sm;
+    margin-bottom: 1rem;
+    &::placeholder{
+      color: vars.$grey;
+    }
+  }
+
+  & textarea{
+    resize: none;
+  }
+
+  & button{
+    background: vars.$primary-color;
+    border: none;
+    color: vars.$white;
+    border-radius: vars.$border-radius-md;
+    padding: 1em 0;
+    width: 100%;
+  }
+
+  &__close{
+    color: vars.$white;
+    background-color: vars.$primary-color;
+    width: 20px;
+    height: 20px;
+    font-size: 2rem;
+    margin-left: auto;
+    margin-bottom: 2rem;
+    border-radius: vars.$border-round;
+    cursor: pointer;
+  }
+}
