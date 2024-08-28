@@ -69,6 +69,10 @@
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
       background: transparent;
+      margin-top: 2rem;
+    }
+    @include vars.viewport-xl{
+      margin-top: 0;
     }
   }
 
