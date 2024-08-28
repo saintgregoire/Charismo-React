@@ -55,9 +55,6 @@ function Footer() {
             <Link to='/blog'>Блог</Link>
           </li>
           <li>
-            <Link to='/faq'>Вопросы и ответы</Link>
-          </li>
-          <li>
             <Link to='/reviews'>Отзывы</Link>
           </li>
         </ul>

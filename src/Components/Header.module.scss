@@ -11,10 +11,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include vars.viewport-lg{
+    @include vars.viewport-md{
       flex-direction: column;
     }
-    @include vars.viewport-xl{
+    @include vars.viewport-lg{
       flex-direction: row;
     }
   }
@@ -22,7 +22,7 @@
   &__logo{
     width: 120px;
     @include vars.flex;
-    @include vars.viewport-xl{
+    @include vars.viewport-lg{
       margin-right: 12rem;
       width: 150px;
     }
@@ -37,8 +37,7 @@
   &__burger_menu{
     font-size: 2.5rem;
     color: vars.$primary-color;
-
-    @include vars.viewport-lg{
+    @include vars.viewport-md{
       display: none;
     }
   }
@@ -59,7 +58,7 @@
     -webkit-box-shadow: 1px 45px 16px -40px rgba(0,0,0,0.63);
     -moz-box-shadow: 1px 45px 16px -40px rgba(0,0,0,0.63);
 
-    @include vars.viewport-lg{
+    @include vars.viewport-md{
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
@@ -69,10 +68,6 @@
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
       background: transparent;
-      margin-top: 2rem;
-    }
-    @include vars.viewport-xl{
-      margin-top: 0;
     }
   }
 
@@ -87,15 +82,15 @@
     border-radius: vars.$border-round;
     margin-bottom: 2.5rem;
 
-    @include vars.viewport-lg{
+    @include vars.viewport-md{
       display: none;
     }
   }
 
   &__list{
-    @include vars.viewport-lg{
+    @include vars.viewport-md{
       display: grid;
-      grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 1fr 2fr;
+      grid-template-columns: 2fr 2fr 2fr 2fr 1fr 2fr;
       text-align: center;
     }
 
@@ -103,7 +98,7 @@
       padding: 1rem 0;
       position: relative;
       text-wrap: nowrap;
-      @include vars.viewport-xl{
+      @include vars.viewport-md{
         padding: 0;
         @include vars.flex;
         }
@@ -121,7 +116,7 @@
       border-right: 2px solid vars.$title-color;
       transform: rotate(45deg) translateY(-50%);
 
-      @include vars.viewport-lg{
+      @include vars.viewport-md{
         display: none;
       }
     }
@@ -152,7 +147,7 @@
       cursor: pointer;
 
       & > span{
-        @include vars.viewport-lg{
+        @include vars.viewport-md{
           display: none;
         }
       }
@@ -161,17 +156,14 @@
   &__cart{
     border-top: 1px solid vars.$grey;
     border-bottom: 1px solid vars.$grey;
-
-    @include vars.viewport-lg{
+    @include vars.viewport-md{
       border: none;
-      grid-column: 7/8;
       justify-self: center;
       align-self: center;
-      margin-right: 2rem;
     }
 
     & > button{
-      @include vars.viewport-lg{
+      @include vars.viewport-md{
         background: vars.$primary-transparent;
         padding: 1rem;
         border-radius: vars.$border-radius-md;
@@ -185,18 +177,18 @@
 
   &__call{
     border-bottom: 1px solid vars.$grey;
-    @include vars.viewport-lg{
+    @include vars.viewport-md{
       border: none;
-      grid-column: 8/9;
     } 
 
       & > button{
-        @include vars.viewport-lg{
+        @include vars.viewport-md{
           border: 1px solid vars.$primary-color;
-        border-radius: vars.$border-radius-md;
-        padding: 1rem 2rem;
-        text-wrap: nowrap;
-        &:hover{
+          border-radius: vars.$border-radius-md;
+          padding: 1rem 2rem;
+          text-wrap: nowrap;
+
+          &:hover{
           background: vars.$primary-transparent;
         }
         }
@@ -207,7 +199,7 @@
 
   &__social{
     padding: 1rem 0;
-    @include vars.viewport-lg{
+    @include vars.viewport-md{
       display: none;
     }
 
