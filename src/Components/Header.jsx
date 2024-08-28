@@ -1,6 +1,6 @@
 import { useContext, useRef, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { ModalContext } from '../Services/ModalContext.jsx';
+import { ModalContext } from '../Services/Context.jsx';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { IoIosClose } from 'react-icons/io';
 import { FaFacebookF, FaLinkedinIn, FaWhatsapp, FaInstagram } from 'react-icons/fa';
@@ -10,11 +10,9 @@ import {IoCall} from "react-icons/io5";
 import style from './Header.module.scss';
 import logo from '/src/assets/images/logo.png';
 
-
 function Header() {
   const { setValue } = useContext(ModalContext);
   const navMenu = useRef(null);
-  const [popUp, setPopUp] = useState(false);
 
   const openBurger = () => {
     navMenu.current.classList.add(style.show);
@@ -25,8 +23,7 @@ function Header() {
   };
 
   const popUpShow = () => {
-    setPopUp(!popUp);
-    setValue(!popUp); 
+    setValue(prevValue => !prevValue);
   };
 
   return (
