@@ -4,7 +4,11 @@ import style from './Shop.module.scss'
 
 function Shop() {
   return (
-    <div>Shop</div>
+    <main>
+      <p className={style.top}>
+        Главная <span>Магазин</span>
+      </p>
+    </main>
   )
 }
 
