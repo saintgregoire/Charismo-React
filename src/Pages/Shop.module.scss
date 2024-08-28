@@ -27,3 +27,10 @@
     }
   }
 }
+
+.products{
+  padding-top: 4rem;
+  @include vars.flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
