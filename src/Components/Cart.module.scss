@@ -1,1 +1,53 @@
 @use '../styles/vars' as vars;
+
+.cart{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 99999;
+  background: vars.$white;
+  padding: 2rem;
+
+  & h2{
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid vars.$grey;
+  }
+
+  & p{
+    text-align: center;
+    padding: 1em 0;
+    color: vars.$title-color;
+    font-weight: 600;
+    font-size: 2rem;
+    border-top: 1px solid vars.$grey;
+    border-bottom: 1px solid vars.$grey;
+    & > span{
+      color: vars.$primary-color;
+    }
+  }
+
+  & a {
+    display: block;
+    background-color: vars.$primary-color;
+    margin-top: 2rem;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 1em 0;
+    border-radius: vars.$border-radius-sm;
+  }
+
+  &__close{
+    width: 20px;
+    height: 20px;
+    border-radius: vars.$border-round;
+    background: vars.$primary-color;
+    color: vars.$white;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+}
