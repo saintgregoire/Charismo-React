@@ -1,0 +1,10 @@
+@use '../styles/vars' as vars;
+
+.partners__image{
+  width: 100%;
+
+  & > img{
+    width: 100%;
+    object-fit: cover;
+  }
+}

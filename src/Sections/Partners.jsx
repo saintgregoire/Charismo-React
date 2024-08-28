@@ -7,6 +7,8 @@ import style from './Partners.module.scss'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 
+import Partner from '../Components/Partner';
+
 import amway from '../assets/images/amway-vector-logo.png'
 import bio from '../assets/images/Bio-Rad_Laboratories-ON2uTt4bn_brandlogos.net.svg'
 import watsons from '../assets/images/Watsons logo - Brandlogos.net.svg'
@@ -20,6 +22,8 @@ import vhi from '../assets/images/Vhi Healthcare logo - Brandlogos.net.svg'
 
 
 function Partners() {
+
+  const partnersImgs = [amway, bio, watsons, chugai, devoted, dove, jj, oriflame, rexona, vhi];
 
   const [slides, setSlides] = useState(3);
   const [space, setSpace] = useState(50);
@@ -68,56 +72,13 @@ function Partners() {
         pauseOnMouseEnter: true
       }}
     >
-      <SwiperSlide className={`${style.partners__slide}`}>
-        <div className={`${style.partners__image}`}>
-          <img src={amway} alt="Лого партнера" />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className={`${style.partners__slide}`}>
-        <div className={`${style.partners__image}`}>
-          <img src={bio} alt="Лого партнера" />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className={`${style.partners__slide}`}>
-        <div className={`${style.partners__image}`}>
-          <img src={watsons} alt="Лого партнера" />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className={`${style.partners__slide}`}>
-        <div className={`${style.partners__image}`}>
-          <img src={chugai} alt="Лого партнера" />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className={`${style.partners__slide}`}>
-        <div className={`${style.partners__image}`}>
-          <img src={devoted} alt="Лого партнера" />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className={`${style.partners__slide}`}>
-        <div className={`${style.partners__image}`}>
-          <img src={dove} alt="Лого партнера" />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className={`${style.partners__slide}`}>
-        <div className={`${style.partners__image}`}>
-          <img src={jj} alt="Лого партнера" />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className={`${style.partners__slide}`}>
-        <div className={`${style.partners__image}`}>
-          <img src={oriflame} alt="Лого партнера" />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className={`${style.partners__slide}`}>
-        <div className={`${style.partners__image}`}>
-          <img src={rexona} alt="Лого партнера" />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className={`${style.partners__slide}`}>
-        <div className={`${style.partners__image}`}>
-          <img src={vhi} alt="Лого партнера" />
-        </div>
-      </SwiperSlide>
+
+      {partnersImgs.map((item, index) => (
+        <SwiperSlide key={index} className={`${style.partners__slide}`}>
+          <Partner img={item} />
+        </SwiperSlide>
+      ))}
+      
     </Swiper>
 
     </section>
