@@ -1,6 +1,8 @@
 import React, {useContext, useState} from 'react'
 import style from './Modal.module.scss'
 
+import { ModalContext } from '../Services/Context.jsx';
+
 import { IoIosClose } from 'react-icons/io';
 import { ModalContext } from '../Services/Context.jsx';
 
@@ -10,14 +12,14 @@ function Modal() {
 
   const {value, setValue } = useContext(ModalContext);
 
-  const popUpShow = () => {
+  const popUpClose = () => {
     setValue(false);
 };
 
   return (
     <div className={`${style.modal}`}>
       <div className={`${style.modal__window}`}>
-        <div onClick={popUpShow} className={`${style.modal__close}`}>
+        <div onClick={popUpClose} className={`${style.modal__close}`}>
           <IoIosClose />
         </div>
         <p className={`${style.modal__welcome}`}>Добро пожаловать в семью</p>

@@ -1,6 +1,7 @@
 import { useContext, useRef, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { ModalContext } from '../Services/Context.jsx';
+import { ModalContext, CartContext } from '../Services/Context.jsx';
+
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { IoIosClose } from 'react-icons/io';
 import { FaFacebookF, FaLinkedinIn, FaWhatsapp, FaInstagram } from 'react-icons/fa';
@@ -12,6 +13,7 @@ import logo from '/src/assets/images/logo.png';
 
 function Header() {
   const { setValue } = useContext(ModalContext);
+  const { setCartValue } = useContext(CartContext);
   const navMenu = useRef(null);
 
   const openBurger = () => {
@@ -25,6 +27,10 @@ function Header() {
   const popUpShow = () => {
     setValue(prevValue => !prevValue);
   };
+
+  const cartShow = () => {
+    setCartValue(prevValue => !prevValue);
+  }
 
   return (
       <header className={style.header}>
@@ -59,7 +65,7 @@ function Header() {
                 <NavLink to='/reviews' onClick={closeBurger}>Отзывы</NavLink>
               </li>
               <li className={style.header__cart}>
-                <button type="button" onClick={closeBurger}><span>Корзина</span> <FaCartShopping /></button>
+                <button type="button" onClick={() => {cartShow(); closeBurger()}}><span>Корзина</span> <FaCartShopping /></button>
               </li>
               <li className={style.header__call}>
                 <button type="button" onClick={() => {popUpShow(); closeBurger();}}>Перезвоните мне <span><IoCall /></span></button>
