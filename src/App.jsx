@@ -1,4 +1,5 @@
 import './index.scss'
+
 import { useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
@@ -9,6 +10,7 @@ import Post from "./Pages/Post.jsx";
 import Product from "./Pages/Product.jsx";
 import Reviews from "./Pages/Reviews.jsx";
 import Shop from "./Pages/Shop.jsx";
+
 import Modal from "./Components/Modal.jsx";
 import Header from "./Components/Header.jsx";
 import Footer from './Components/Footer.jsx';
