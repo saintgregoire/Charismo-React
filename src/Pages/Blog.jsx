@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { Link } from 'react-router-dom';
 import style from './Blog.module.scss'
 
 import Post from '../Components/Post.jsx';
@@ -41,15 +42,18 @@ function Blog() {
         <ul>
           {currentPosts.map((item) => (
             <li key={item.id}>
-              <Post 
-                img={item.img}
-                alt={item.alt}
-                category={item.category}
-                title={item.title}
-                text={item.text}
-                date={item.date}
-                dateTxt={item.dateTxt}
-              />
+              <Link to={`/post?title=${encodeURIComponent(item.title)}&img=${encodeURIComponent(item.img)}&alt=${encodeURIComponent(item.alt)}&text=${encodeURIComponent(item.text)}&date=${encodeURIComponent(item.date)}&dateTxt=${encodeURIComponent(item.dateTxt)}`} 
+      className={style.posts__link}>
+                <Post 
+                  img={item.img}
+                  alt={item.alt}
+                  category={item.category}
+                  title={item.title}
+                  text={item.text}
+                  date={item.date}
+                  dateTxt={item.dateTxt}
+                />
+              </Link>
             </li>
           ))}
         </ul>
