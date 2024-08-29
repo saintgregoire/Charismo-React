@@ -33,6 +33,11 @@
   padding-top: 5rem;
   padding-bottom: 5rem;
 
+  &__link{
+    text-decoration: none;
+    color: vars.$txt-color;
+  }
+
   & ul{
     display: flex;
     flex-direction: column;
