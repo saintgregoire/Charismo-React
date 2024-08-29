@@ -3,28 +3,28 @@
     "id": 1,
     "name": "DEKOHAIR",
     "description": "Лосьон против выпадения волос",
-    "price": "800 UAH",
+    "price": "800",
     "img": "/images/Deckohair.webp" 
   },
   {
     "id": 2,
     "name": "Dekobrow",
     "description": "Лосьон для укрепления волос бровей",
-    "price": "500 UAH",
+    "price": "500",
     "img": "/images/DekoBrow.jpg"
   },
   {
     "id": 3,
     "name": "DekoPill",
     "description": "Лосьон для волос",
-    "price": "750 UAH",
+    "price": "750",
     "img": "/images/Dekopill.jpg"
   },
   {
     "id": 4,
     "name": "DekoBeard",
     "description":"Лосьон для бороды",
-    "price": "655 UAH",
+    "price": "655",
     "img": "/images/Dekobeard.png"
   }
 ]

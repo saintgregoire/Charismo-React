@@ -9,7 +9,7 @@ function Product({img, name, desc, price}) {
       </div>
       <h2>{name}</h2>
       <p className={style.product__desc}>{desc}</p>
-      <p className={style.product__price}>{price}</p>
+      <p className={style.product__price}>{price} UAH</p>
       <button type='button'>В корзину</button>
     </article>
   )
