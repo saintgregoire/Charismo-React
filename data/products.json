@@ -4,27 +4,35 @@
     "name": "DEKOHAIR",
     "description": "Лосьон против выпадения волос",
     "price": "800",
-    "img": "/images/Deckohair.webp" 
+    "img": "/images/Deckohair.webp",
+    "mainDesc": "Причиной любых проблем с ростом здоровых волос является нарушение нормального питания и деления клеток.</br>В основе Dekohair лежит уникальная формула DEKOPILL, которая позволяет получить неповторимые свойства лосьона обеспечивает ОБЯЗАТЕЛЬНЫЕ УСЛОВИЯ для восстановления цикла роста здоровых волос.",
+    "characteristics": ""
   },
   {
     "id": 2,
     "name": "Dekobrow",
     "description": "Лосьон для укрепления волос бровей",
     "price": "500",
-    "img": "/images/DekoBrow.jpg"
+    "img": "/images/DekoBrow.jpg",
+    "mainDesc": "",
+    "characteristics": ""
   },
   {
     "id": 3,
     "name": "DekoPill",
     "description": "Лосьон для волос",
     "price": "750",
-    "img": "/images/Dekopill.jpg"
+    "img": "/images/Dekopill.jpg",
+    "mainDesc": "",
+    "characteristics": ""
   },
   {
     "id": 4,
     "name": "DekoBeard",
     "description":"Лосьон для бороды",
     "price": "655",
-    "img": "/images/Dekobeard.png"
+    "img": "/images/Dekobeard.png",
+    "mainDesc": "",
+    "characteristics": ""
   }
 ]
