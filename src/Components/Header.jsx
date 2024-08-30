@@ -59,9 +59,6 @@ function Header() {
                 <NavLink to='/blog' onClick={closeBurger}>Блог</NavLink>
               </li>
               <li>
-                <NavLink to='/faq' onClick={closeBurger}>Вопросы и ответы</NavLink>
-              </li>
-              <li>
                 <NavLink to='/reviews' onClick={closeBurger}>Отзывы</NavLink>
               </li>
               <li className={style.header__cart}>
