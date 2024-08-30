@@ -4,22 +4,22 @@ import { useNavigate } from 'react-router-dom'
 
 import style from './Product.module.scss'
 
-function Product({img, name, desc, price, mainDesc, category,characteristics}) {
+function Product({img, name, desc, price, mainDesc, category, characteristics}) {
 
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/product', {
-      state: {
-        img: {img},
-        name: {name},
-        price: {price},
-        desc: {desc},
-        description: {mainDesc},
-        category: {category},
-        characteristics: {characteristics}
-      }
-    })
+    const queryParams = new URLSearchParams({
+      img: img,
+      name: name,
+      price: price,
+      desc: desc,
+      description: mainDesc,
+      category: category,
+      characteristics: characteristics
+    }).toString();
+
+    navigate(`/product?${queryParams}`);
   }
 
   return (

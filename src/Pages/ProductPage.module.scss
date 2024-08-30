@@ -1,0 +1,131 @@
+@use '../styles/vars' as vars;
+
+.top{
+  color: vars.$title-color;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 2px solid vars.$grey;
+  border-top: 2px solid vars.$grey;
+  @include vars.viewport-lg{
+    border-top: none;
+  }
+
+  & span{
+    padding-left: 2rem;
+    position: relative;
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      width: .5rem;
+      height: .5rem;
+      border-top: 2px solid vars.$grey;
+      border-right: 2px solid vars.$grey;
+      transform: rotate(45deg) translateY(-50%);
+    }
+  }
+
+  &__second{
+    font-weight: 600;
+  }
+}
+
+.card{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  @include vars.viewport-lg{
+    flex-direction: row;
+  }
+  @include vars.viewport-lg{
+    gap: 5rem;
+  }
+
+  &__img{
+    width: 100%;
+    height: 325px;
+    @include vars.viewport-md{
+      width: 50%;
+    }
+    @include vars.viewport-lg{
+      width: 100%;
+      height: auto;
+    }
+
+    & > img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__block{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    @include vars.viewport-xl{
+      justify-content: space-between;
+    }
+  }
+
+  &__price{
+    font-size: 2.5rem;
+    color: vars.$primary-color;
+    font-weight: 600;
+  }
+
+  &__desc{
+    @include vars.viewport-lg{
+      border-top: 1px solid vars.$grey;
+      padding-top: 2rem;
+    }
+  }
+
+  &__btns_block{
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__counter{
+    display: flex;
+    border: 1px solid vars.$grey;
+    border-radius: vars.$border-radius-sm;
+  }
+
+  &__btn{
+    border: none;
+    background: none;
+    padding: 1rem;
+    cursor: pointer;
+    color: vars.$txt-color;
+  }
+
+  &__value{
+    padding: 1rem;
+  }
+
+  &__add{
+    border: 1px solid transparent;
+    background-color: vars.$primary-color;
+    color: vars.$white;
+    border-radius: vars.$border-radius-sm;
+    width: 150px;
+    cursor: pointer;
+  }
+
+  &__category{
+    @include vars.viewport-lg{
+      border-top: 1px solid vars.$grey;
+      padding-top: 2rem;
+    }
+    
+    & > span{
+      color: vars.$title-color;
+      font-weight: 600;
+    }
+  }
+}
