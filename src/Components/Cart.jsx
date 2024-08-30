@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
 import style from './Cart.module.scss'
+
 import { Link } from 'react-router-dom'
 
 import { CartContext } from '../Services/Context';
@@ -20,7 +21,6 @@ function Cart() {
       </div>
       <h2>Корзина</h2>
       <div className={style.cart__products}>
-
       </div>
       <p>Итого: <span>333</span></p>
       <Link to='#'>Оформить заказ</Link>
