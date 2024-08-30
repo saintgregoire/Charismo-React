@@ -33,7 +33,7 @@ function Product({img, name, desc, price, mainDesc, category,characteristics}) {
       <div className={style.product__btn_container}>
         <button type='button'>В корзину</button>
         <button type='button' onClick = {handleClick}>Подробнее</button>
-      </div>
+      </div> 
     </article>
   )
 }
