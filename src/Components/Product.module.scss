@@ -27,9 +27,21 @@
     font-size: 2rem;
   }
 
-  & button{
-    width: 70%;
+  &__btn_container{
+    @include vars.flex;
     height: 40px;
+    gap: 1rem;
+
+    & > button:last-child{
+      background: vars.$grey;
+      border: 1px solid vars.$primary-color;
+      color: vars.$primary-color;
+    }
+  }
+
+  & button{
+    height: 100%;
+    flex: 1 1 45%;
     align-self: center;
     background: vars.$primary-color;
     color: vars.$white;
