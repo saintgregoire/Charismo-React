@@ -40,6 +40,9 @@ function Shop() {
           name={item.name}
           desc={item.description}
           price={item.price}
+          mainDesc={item.mainDesc}
+          category={item.category}
+          characteristics={item.characteristics}
           />
         ))}
       </section>
