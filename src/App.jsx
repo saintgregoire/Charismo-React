@@ -6,7 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ModalContext, MyProvider, CartProvider, CartContext } from './Services/Context.jsx';
 
 import Post from "./Pages/Post.jsx";
-import Product from "./Pages/Product.jsx";
+import ProductPage from "./Pages/ProductPage.jsx";
 import Reviews from "./Pages/Reviews.jsx";
 import Shop from "./Pages/Shop.jsx";
 
@@ -26,7 +26,7 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/blog" element={<Blog />} />
                         <Route path="/post" element={<Post />} />
-                        <Route path="/product" element={<Product />} />
+                        <Route path="/product" element={<ProductPage />} />
                         <Route path="/reviews" element={<Reviews />} />
                         <Route path="/shop" element={<Shop />} />
                     </Routes>
