@@ -1,0 +1,56 @@
+@use '../styles/vars' as vars;
+
+.item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+  @include vars.viewport-lg{
+    justify-content: start;
+    gap: 15rem;
+  }
+
+  &__block{
+    padding-left: 3rem;
+    @include vars.viewport-md{
+      padding-left: 4rem;
+    }
+  }
+
+  & .item__name, & .item__price{
+    font-weight: 400;
+    border: none;
+    padding: 0;
+    text-align: left;
+  }
+
+  & .item__price{
+    color: vars.$primary-color;
+  }
+
+  &__img{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: vars.$border-radius-sm;
+
+    & > img{
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__delete{
+    width: 20px;
+    height: 20px;
+    border-radius: vars.$border-round;
+    background: vars.$primary-color;
+    color: vars.$white;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    left: 1rem;
+    top: 4rem;
+  }
+}
