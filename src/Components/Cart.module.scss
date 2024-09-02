@@ -8,6 +8,7 @@
   z-index: 99999;
   background: vars.$white;
   padding: 2rem;
+  overflow-y: auto;
 
   & h2{
     padding-bottom: 1.5rem;
