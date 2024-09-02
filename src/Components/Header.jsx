@@ -11,7 +11,6 @@ import {IoCall} from "react-icons/io5";
 import style from './Header.module.scss';
 import logo from '/src/assets/images/logo.png';
 
-
 function Header() {
   const { setValue } = useContext(ModalContext);
   const { setCartValue } = useContext(CartContext);
