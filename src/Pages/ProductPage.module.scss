@@ -129,3 +129,14 @@
     }
   }
 }
+
+.char__title{
+  background-color: vars.$primary-transparent;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.char__par{
+  line-height: 1.6;
+}

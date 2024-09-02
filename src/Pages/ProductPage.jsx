@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useRef, useEffect, useContext } from 'react'
 
 import { useLocation } from 'react-router-dom'
 import { CartContext } from '../Services/Context';
@@ -10,6 +10,7 @@ function ProductPage() {
 
   const location = useLocation();
   const query = new URLSearchParams(location.search);
+  const charact = useRef(null);
 
   const img = query.get('img');
   const name = query.get('name');
@@ -18,6 +19,10 @@ function ProductPage() {
   const mainDesc = query.get('description');
   const category = query.get('category');
   const characteristics = query.get('characteristics');
+
+  useEffect(() => {
+    charact.current.innerHTML = characteristics;
+  }, [characteristics]);
 
   const [value, setValue] = useState(1);
 
@@ -65,6 +70,11 @@ function ProductPage() {
             <p className={style.card__category}>Категория: <span>{category}</span></p>
           </div>
         </article>
+      </section>
+
+      <section className='container'>
+        <h2 className={style.char__title}>Характеристики</h2>
+        <p ref={charact} className={style.char__par}></p>
       </section>
 
     </main>
