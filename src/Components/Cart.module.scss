@@ -8,11 +8,18 @@
   z-index: 99999;
   background: vars.$white;
   padding: 2rem;
-  overflow-y: auto;
 
   & h2{
     padding-bottom: 1.5rem;
     border-bottom: 1px solid vars.$grey;
+  }
+
+  &__products{
+    max-height: 200px;
+    overflow: auto;
+    @include vars.viewport-md{
+      max-height: 300px;
+    }
   }
 
   & p{
