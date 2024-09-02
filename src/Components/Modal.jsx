@@ -4,7 +4,6 @@ import style from './Modal.module.scss'
 import { ModalContext } from '../Services/Context.jsx';
 
 import { IoIosClose } from 'react-icons/io';
-import { ModalContext } from '../Services/Context.jsx';
 
 
 
