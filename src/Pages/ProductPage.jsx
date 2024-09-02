@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 
 import { useLocation } from 'react-router-dom'
+import { CartContext } from '../Services/Context';
 
 import style from './ProductPage.module.scss'
 
@@ -20,6 +21,8 @@ function ProductPage() {
 
   const [value, setValue] = useState(1);
 
+  const { addToCart } = useContext(CartContext);
+
   const addValue = () => {
     setValue((prev) => prev + 1);
   }
@@ -29,6 +32,11 @@ function ProductPage() {
       setValue((prev) => prev - 1);
     }
   }
+
+  const handleAddToCart = () => {
+    const item = { name, value, price, img };
+    addToCart(item);
+};
 
   return (
     <main>
@@ -52,7 +60,7 @@ function ProductPage() {
                 <p className={style.card__value}>{value}</p>
                 <button type='button' className={style.card__btn} onClick={addValue}>+</button>
               </div>
-              <button type='button' className={style.card__add}>В корзину</button>
+              <button type='button' className={style.card__add} onClick={handleAddToCart}>В корзину</button>
             </div>
             <p className={style.card__category}>Категория: <span>{category}</span></p>
           </div>
