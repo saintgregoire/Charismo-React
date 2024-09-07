@@ -28,21 +28,22 @@ function Reviews() {
   }
 
   useEffect(() => {
-    fetch('/data/reviews.json')
-      .then((resp) => {
-        return resp.json();
-      })
-      .then((jsonData) => {
+    const fetchData = async () => {
+      try {
+        const resp = await fetch('/data/reviews.json');
+        const jsonData = await resp.json();
         setData(jsonData);
-      })
-      .catch((error) => {
-        console.error('There was a problem width fetch:', error);
-      })
-
+      } catch (error) {
+        console.error('There was a problem with fetch:', error);
+      }
+    };
+  
+    fetchData();
+  
     updateSlides();
-
+  
     window.addEventListener('resize', updateSlides);
-
+  
     return () => {
       window.removeEventListener('resize', updateSlides);
     };
